@@ -89,7 +89,7 @@ class Ebook():
                 if 503 in self.meta.exth:
                     self.title = self.meta.exth[503]
             else:
-                print "\nMetadata read error:", path
+                print("\nMetadata read error:", path)
         elif ext in ['tpz', 'azw1']:
             self.meta = ebook.Topaz(path)
             if self.meta.title:
@@ -99,7 +99,7 @@ class Ebook():
                 if self.meta.type:
                     self.type = self.meta.type
             else:
-                print "\nTopaz metadata read error:", path
+                print("\nTopaz metadata read error:", path)
         elif ext in ['azw2']:
             self.meta = ebook.Kindlet(path)
             if self.meta.title:
@@ -109,7 +109,7 @@ class Ebook():
                 self.type = 'AZW2'
             else:
                 # Couldn't get an ASIN, developper app? We'll use the hash instead, which is what the Kindle itself does, so no harm done.
-                print "\nKindlet Metadata read error, assuming developper app:", path
+                print("\nKindlet Metadata read error, assuming developper app:", path)
 
 class Kindle:
     '''Access a Kindle filesystem

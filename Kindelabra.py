@@ -10,7 +10,6 @@ import os
 import datetime
 import json
 import re
-
 import gtk
 import kindle
 
@@ -125,7 +124,7 @@ class KindleUI:
                         namehash = book.hash
                     except:
                         namehash = None
-                        print "! ASIN %s belongs to collection %s but wasn't found on the device!" %( asin, collection )
+                        print("! ASIN %s belongs to collection %s but wasn't found on the device!" %( asin, collection ))
                 if namehash in self.kindle.files:
                     if self.kindle.files[namehash].title:
                         filename = self.kindle.files[namehash].title
